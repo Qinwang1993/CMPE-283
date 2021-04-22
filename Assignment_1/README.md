@@ -1,9 +1,9 @@
 # CMPE 283 Assignment 1
-Team Member: Wang, Qin
-Student ID : 013986752
+Team Member: Wang, Qin  
+Student ID : 013986752  
 
-#Question: Describe in detail the steps you used to complete the assignment.
-Answer:
+# Question: Describe in detail the steps you used to complete the assignment.
+# Answer:
 Assignment 1 is to create a Linux kernel module that will query various MSRs to determine
 virtualization features available in our CPU. This module will report (via the system message log) the
 features it discovers.
