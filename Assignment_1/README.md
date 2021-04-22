@@ -20,31 +20,31 @@ Implementation steps:
 - git clone https://github.com/Qinwang1993/linux
 
 3. Follow the instructions https://wiki.ubuntu.com/Kernel/BuildYourOwnKernel to build the Linux kernel: 
-- sudo apt-get install libncurses-dev
-- sudo apt-get install libssl-dev
-- make menuconfig
-- make
-- make modules
-- make modules_install
-- make install
+ - sudo apt-get install libncurses-dev
+ - sudo apt-get install libssl-dev
+ - make menuconfig
+ - make
+ - make modules
+ - make modules_install
+ - make install
 
 4. Code a .c (C language) file that will be used to find the capabilities of the MSRs:
 -gedit cmpe283-1.c
 File content/code displayed in the appendix of this file.https://github.com/Qinwang1993/CMPE-283/blob/master/Assignment_1/cmpe283-1.c
 
 5. Creating new kernel module for MSRs:
--gedit Makefile
-File contentobj-
-m += cmpe283-1.o
-all:
-make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
-clean:
-make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
--make all
+ -gedit Makefile
+ File contentobj-
+ m += cmpe283-1.o
+ all:
+ make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
+ clean:
+ make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
+ -make all
 
 6. Inserting/Loading the specific kernel module into the kernel:
-- insmod ./cmpe283-1.ko
+ - insmod ./cmpe283-1.ko
 
 7. Verify the message buffer/output from the kernel in the system message log:
-- dmesg
+ - dmesg
 The output log displayed in the appendix of this file. https://github.com/Qinwang1993/CMPE-283/blob/master/Assignment_1/output
