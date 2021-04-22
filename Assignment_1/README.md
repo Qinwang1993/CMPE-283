@@ -28,9 +28,9 @@ Implementation steps:
  - make modules_install
  - make install
 
-4. Code a .c (C language) file that will be used to find the capabilities of the MSRs:
+4. Modify the .c file that will be used to find the capabilities of the MSRs:
 -gedit cmpe283-1.c
-File content/code displayed in the appendix of this file.https://github.com/Qinwang1993/CMPE-283/blob/master/Assignment_1/cmpe283-1.c
+Code is shown as: https://github.com/Qinwang1993/CMPE-283/blob/master/Assignment_1/cmpe283-1.c
 
 5. Creating new kernel module for MSRs:
  -gedit Makefile
