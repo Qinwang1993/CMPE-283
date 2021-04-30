@@ -1,6 +1,7 @@
 # CMPE 283 Assignment 2  
-Team Member: Qin Wang - 013986752    
-             Chen Zhang - 014536496  
+Team Member: 
+Qin Wang - 013986752    
+Chen Zhang - 014536496  
 
 ## Assignment 2:  
 This assignment focuses on modifying processor instruction behavior inside the KVM hypervisor.   
