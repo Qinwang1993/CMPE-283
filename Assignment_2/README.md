@@ -24,36 +24,36 @@ We met and did this research together. The following steps were all discussed an
 ### 2. Describe in detail the steps you used to complete the assignment. 
 ### Answer:
 #### Initial Setup
-1. Build environment https://wiki.ubuntu.com/Kernel/BuildYourOwnKernel
-2. Clone the Kernel code from GitHub: git clone https://github.com/torvalds/linux.git
-3. Kernel Code Compilation :
-   uname -a
-   cp /boot/config-5.8.0-43-generic ./.config
-   make oldconfig
-   make -j 2 modules && make -j 2 && sudo make modules_install && sudo make install
-   reboot
-   Verify the updated Linux version: uname -a
+1. Build environment https://wiki.ubuntu.com/Kernel/BuildYourOwnKernel  
+2. Clone the Kernel code from GitHub: git clone https://github.com/torvalds/linux.git  
+3. Kernel Code Compilation :  
+   uname -a  
+   cp /boot/config-5.8.0-43-generic ./.config  
+   make oldconfig  
+   make -j 2 modules && make -j 2 && sudo make modules_install && sudo make install  
+   reboot  
+   Verify the updated Linux version: uname -a  
 #### Build
-1.Modify cpuid.c and vmx.c
-2.Compile using: make -j 2 modules && make -j 2 && sudo make modules_install && sudo make install
+1.Modify cpuid.c and vmx.c  
+2.Compile using: make -j 2 modules && make -j 2 && sudo make modules_install && sudo make install  
 #### Setup KVM
-1.Install KVM and supporting packages: sudo apt-get install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
-2.Install the virt-manager using: sudo apt-get install virt-manager
-3.Reboot
+1.Install KVM and supporting packages: sudo apt-get install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils  
+2.Install the virt-manager using: sudo apt-get install virt-manager  
+3.Reboot  
  
 #### Created nested VM
-1.Use virt-manager to create nested virtual machine
-2.Install Ubuntu in nested VM
+1.Use virt-manager to create nested virtual machine  
+2.Install Ubuntu in nested VM  
  
 #### Test
-1. Write test.c
-2.Install gcc https://linuxize.com/post/how-to-install-gcc-compiler-on-ubuntu-18-04/
-3.Compile test file: gcc test.c
-4.Check output
+1. Write test.c  
+2.Install gcc https://linuxize.com/post/how-to-install-gcc-compiler-on-ubuntu-18-04/  
+3.Compile test file: gcc test.c  
+4.Check output  
 <div  align="center">    
    <img src = "https://github.com/Qinwang1993/CMPE-283/blob/master/Assignment_2/Picture1.png" width = "700" />
 </div>
-5.Check host VM kern.log: tail -n20 /var/log/kern.log
+5.Check host VM kern.log: tail -n20 /var/log/kern.log  
  <div  align="center">    
    <img src = "https://github.com/Qinwang1993/CMPE-283/blob/master/Assignment_2/Picture2.png" width = "700" />
 </div>
