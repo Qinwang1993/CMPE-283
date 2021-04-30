@@ -51,11 +51,11 @@ We met and did this research together. The following steps were all discussed an
 3.Compile test file: gcc test.c
 4.Check output
 <div  align="center">    
-   <img src = "https://github.com/Qinwang1993/CMPE-283/blob/master/Assignment_2/Picture1.png" width = "500" />
+   <img src = "https://github.com/Qinwang1993/CMPE-283/blob/master/Assignment_2/Picture1.png" width = "700" />
 </div>
 5.Check host VM kern.log: tail -n20 /var/log/kern.log
  <div  align="center">    
-   <img src = "https://github.com/Qinwang1993/CMPE-283/blob/master/Assignment_2/Picture2.png" width = "500" />
+   <img src = "https://github.com/Qinwang1993/CMPE-283/blob/master/Assignment_2/Picture2.png" width = "700" />
 </div>
  
 
