@@ -21,11 +21,39 @@ assignment
   - There is no need to insmod anything like assignment 1 did
 • Verify proper output
 
-1. For each member in your team, provide 1 paragraph detailing what parts of the lab that member implemented / researched. (You may skip this question if you are doing the lab by yourself).
-2. Describe in detail the steps you used to complete the assignment. Consider your reader to be someone skilled in software development but otherwise unfamiliar with the assignment. Good answers to this question will be recipes that someone can follow to reproduce your development steps.
-Note: I may decide to follow these instructions for random assignments, so you should make sure they are accurate.
-3. Comment on the frequency of exits – does the number of exits increase at a stable rate? Or are there more exits performed during certain VM operations? Approximately how many exits does a full VM boot entail?
-4. Of the exit types defined in the SDM, which are the most frequent? Least?
+## Question: 
+### 1. For each member in your team, provide 1 paragraph detailing what parts of the lab that member implemented / researched. (You may skip this question if you are doing the lab by yourself).
+### Answer:
+We met and did this research together. The following steps were all discussed and completed by ourselves:
+• Reuse the assignment2 environment
+• Revisited the related video lecture and the requirements of assignment3
+• Code cupid.c, vmx.c files
+• Run the test_assignment3.c in the nested VM and get the result
+• Finish the report
+
+### 2. Describe in detail the steps you used to complete the assignment. Consider your reader to be someone skilled in software development but otherwise unfamiliar with the assignment. Good answers to this question will be recipes that someone can follow to reproduce your development steps.
+### Answer:
+#### Initial Setup
+Reuse the assignment2 environment
+#### Build
+1.Modify cpuid.c and vmx.c files
+2.Compile using: make -j 4 modules && make -j 4 && sudo make modules_install && sudo make install
+3.reboot
+
+#### Test
+Start the nested VM and verify CPUID exit conditions using the test_assignment3.c file.
+1. First run: result detail at : https://github.com/Qinwang1993/CMPE-283/blob/master/Assignment_3/first_run.txt
+https://github.com/Qinwang1993/CMPE-283/blob/master/Assignment_3/First_run.png
+2. Second run: result detail at : https://github.com/Qinwang1993/CMPE-283/blob/master/Assignment_3/second_run.txt
+https://github.com/Qinwang1993/CMPE-283/blob/master/Assignment_3/Second_run.png
+
+### 3. Comment on the frequency of exits – does the number of exits increase at a stable rate? Or are there more exits performed during certain VM operations? Approximately how many exits does a full VM boot entail?
+### Answer:
+### 4. Of the exit types defined in the SDM, which are the most frequent? Least?
+### Answer:
+
+
+
 
 
 This assignment focuses on modifying processor instruction behavior inside the KVM hypervisor.   
