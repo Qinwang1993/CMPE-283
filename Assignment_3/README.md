@@ -47,9 +47,9 @@ Start the nested VM and verify CPUID exit conditions using the test_assignment3.
 
 ### 3. Comment on the frequency of exits – does the number of exits increase at a stable rate? Or are there more exits performed during certain VM operations? Approximately how many exits does a full VM boot entail?
 ### Answer:
-From the Result of first run and second run we can see that the number of exits is not increase at a stale rate. Operations like External Interrrupt, I/O instruction etc will cause more exits. About 500k.
+From the Result of first run and second run we can see that the number of exits is not increase at a stale rate. Operations like External Interrrupt, I/O instruction etc will cause more exits. About 1,500,000.
 ### 4. Of the exit types defined in the SDM, which are the most frequent? Least?
 ### Answer:
-External Interrupt, cpuid, and wrsmr are the most frequent exit types. And rsm, invd, etc are the least frequent exit types were .
+External Interrupt, cpuid, I/O instrcution, etc are the most frequent exit types. And MOV DR, INVD, etc are the least frequent exit types.
 
 
