@@ -34,7 +34,7 @@ We met and did this research together. The following steps were all discussed an
 ### 2. Describe in detail the steps you used to complete the assignment. Consider your reader to be someone skilled in software development but otherwise unfamiliar with the assignment. Good answers to this question will be recipes that someone can follow to reproduce your development steps.
 ### Answer:
 #### Initial Setup
-Reuse the assignment2 environment
+Reuse the assignment2 environment: https://github.com/Qinwang1993/CMPE-283/tree/master/Assignment_2
 #### Build
 1.Modify cpuid.c and vmx.c files
 2.Compile using: make -j 4 modules && make -j 4 && sudo make modules_install && sudo make install
@@ -50,7 +50,9 @@ Start the nested VM and verify CPUID exit conditions using the test_assignment3.
 
 ### 3. Comment on the frequency of exits – does the number of exits increase at a stable rate? Or are there more exits performed during certain VM operations? Approximately how many exits does a full VM boot entail?
 ### Answer:
+From the Result of first run and second run we can see that the number of exits is not increase at a stale rate. Operations like External Interrrupt, I/O instruction etc will cause more exits. About 500k.
 ### 4. Of the exit types defined in the SDM, which are the most frequent? Least?
 ### Answer:
+External Interrupt, cpuid, and wrsmr are the most frequent exit types. And rsm, invd, etc are the least frequent exit types were .
 
 
