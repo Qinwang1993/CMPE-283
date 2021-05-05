@@ -53,12 +53,9 @@ Reuse the assignment2 environment
 Start the nested VM and verify CPUID exit conditions using the test_assignment3.c file.
 1. First run: result detail at : https://github.com/Qinwang1993/CMPE-283/blob/master/Assignment_3/first_run.txt
 ![image](https://github.com/Qinwang1993/CMPE-283/blob/master/Assignment_3/First_run.png)
- <div  align="center">    
-  https://github.com/Qinwang1993/CMPE-283/blob/master/Assignment_3/First_run.png
-</div>
 
 2. Second run: result detail at : https://github.com/Qinwang1993/CMPE-283/blob/master/Assignment_3/second_run.txt
-https://github.com/Qinwang1993/CMPE-283/blob/master/Assignment_3/Second_run.png
+![image](https://github.com/Qinwang1993/CMPE-283/blob/master/Assignment_3/Second_run.png)
 
 ### 3. Comment on the frequency of exits – does the number of exits increase at a stable rate? Or are there more exits performed during certain VM operations? Approximately how many exits does a full VM boot entail?
 ### Answer:
