@@ -19,7 +19,7 @@ For leaf nodes 0x4FFFFFFE, if %ecx (on input) contains a value not defined by th
 ## Question: 
 ### 1. For each member in your team, provide 1 paragraph detailing what parts of the lab that member implemented / researched. 
 ### Answer:
-We met and did this research together. The following steps were all discussed and completed by ourselves:
+We met and did this research together. The following steps were all discussed and completed by ourselves:  
 • Reuse the assignment2 environment  
 • Revisited the related video lecture and the requirements of assignment3  
 • Code cupid.c, vmx.c files  
