@@ -1,8 +1,33 @@
-# CMPE 283 Assignment 2  
+# CMPE 283 Assignment 3  
 Team Member: Qin Wang - 013986752    
              Chen Zhang - 014536496  
 
-## Assignment 2:  
+## Assignment 3:  
+This assignment focuses on modifying the CPUID emulation code in KVM to report back additional information when special CPUID leaf nodes are requested.
+• For CPUID leaf node %eax=0x4FFFFFFE:
+• Return the number of exits for the exit number provided (on input) in %ecx
+• This value should be returned in %eax
+For leaf nodes 0x4FFFFFFE, if %ecx (on input) contains a value not defined by the SDM, return 0 in all %eax, %ebx, %ecx registers and return 0xFFFFFFFF in %edx. For exit types not enabled in KVM, return 0s in all four registers.
+At a high level, we will need to perform the following:
+• Start with your assignment 2 environment
+• Modify the kernel code with the assignment functionality:
+  - Determine where to place the measurement code (for exit counts)
+  - Create new CPUID leaf 0x4FFFFFFE
+    - Report back information as described above
+• Create a user-mode program that performs various CPUID instructions required to test your
+assignment
+  - Pro tip: This can be achieved on ubuntu by installing the ‘cpuid’ package
+  - Run this user mode program in the inner VM
+  - There is no need to insmod anything like assignment 1 did
+• Verify proper output
+
+1. For each member in your team, provide 1 paragraph detailing what parts of the lab that member implemented / researched. (You may skip this question if you are doing the lab by yourself).
+2. Describe in detail the steps you used to complete the assignment. Consider your reader to be someone skilled in software development but otherwise unfamiliar with the assignment. Good answers to this question will be recipes that someone can follow to reproduce your development steps.
+Note: I may decide to follow these instructions for random assignments, so you should make sure they are accurate.
+3. Comment on the frequency of exits – does the number of exits increase at a stable rate? Or are there more exits performed during certain VM operations? Approximately how many exits does a full VM boot entail?
+4. Of the exit types defined in the SDM, which are the most frequent? Least?
+
+
 This assignment focuses on modifying processor instruction behavior inside the KVM hypervisor.   
 We need to modify the CPUID emulation code in KVM to report back additional information when a special CPUID “leaf function” is called.  
 • For CPUID leaf function %eax=0x4FFFFFFF:  
