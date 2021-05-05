@@ -17,7 +17,7 @@ For leaf nodes 0x4FFFFFFE, if %ecx (on input) contains a value not defined by th
 
 • Modify the kernel code with the assignment functionality: 
 
-• Create a user-mode program that performs various CPUID instructions required to test your assignment
+• Create a user-mode program that performs various CPUID instructions required to test the assignment
 
 • Verify proper output
 
