@@ -6,18 +6,12 @@ Team Member: Qin Wang - 013986752
 This assignment focuses on modifying the CPUID emulation code in KVM to report back additional information when special CPUID leaf nodes are requested.
 
 • For CPUID leaf node %eax=0x4FFFFFFE:
-
 • Return the number of exits for the exit number provided (on input) in %ecx
-
 • This value should be returned in %eax
-
 For leaf nodes 0x4FFFFFFE, if %ecx (on input) contains a value not defined by the SDM, return 0 in all %eax, %ebx, %ecx registers and return 0xFFFFFFFF in %edx. For exit types not enabled in KVM, return 0s in all four registers.
 At a high level, we will need to perform the following:
-
 • Start with our assignment 2 environment
-
-• Modify the kernel code with the assignment functionality: Determine where to place the measurement code (for exit counts); Create new CPUID leaf 0x4FFFFFFE; Report back information as described above
-    
+• Modify the kernel code with the assignment functionality: Determine where to place the measurement code (for exit counts); Create new CPUID leaf 0x4FFFFFFE; Report back information as described above 
 • Create a user-mode program that performs various CPUID instructions required to test your assignment
   - Pro tip: This can be achieved on ubuntu by installing the ‘cpuid’ package
   - Run this user mode program in the inner VM
