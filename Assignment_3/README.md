@@ -52,6 +52,7 @@ Reuse the assignment2 environment
 #### Test
 Start the nested VM and verify CPUID exit conditions using the test_assignment3.c file.
 1. First run: result detail at : https://github.com/Qinwang1993/CMPE-283/blob/master/Assignment_3/first_run.txt
+![image](https://github.com/Qinwang1993/CMPE-283/blob/master/Assignment_3/First_run.png)
  <div  align="center">    
   https://github.com/Qinwang1993/CMPE-283/blob/master/Assignment_3/First_run.png
 </div>
