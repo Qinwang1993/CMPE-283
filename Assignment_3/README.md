@@ -5,31 +5,25 @@ Team Member: Qin Wang - 013986752
 ## Assignment 3:  
 This assignment focuses on modifying the CPUID emulation code in KVM to report back additional information when special CPUID leaf nodes are requested.
 
-• For CPUID leaf node %eax=0x4FFFFFFE:
-
-• Return the number of exits for the exit number provided (on input) in %ecx
-
-• This value should be returned in %eax
-
+• For CPUID leaf node %eax=0x4FFFFFFE:  
+• Return the number of exits for the exit number provided (on input) in %ecx  
+• This value should be returned in %eax  
 For leaf nodes 0x4FFFFFFE, if %ecx (on input) contains a value not defined by the SDM, return 0 in all %eax, %ebx, %ecx registers and return 0xFFFFFFFF in %edx. For exit types not enabled in KVM, return 0s in all four registers. At a high level, we will need to perform the following:
 
-• Start with our assignment 2 environment
-
-• Modify the kernel code with the assignment functionality: 
-
-• Create a user-mode program that performs various CPUID instructions required to test the assignment
-
-• Verify proper output
+• Start with our assignment 2 environment  
+• Modify the kernel code with the assignment functionality:   
+• Create a user-mode program that performs various CPUID instructions required to test the assignment  
+• Verify proper output  
 
 ## Question: 
 ### 1. For each member in your team, provide 1 paragraph detailing what parts of the lab that member implemented / researched. 
 ### Answer:
 We met and did this research together. The following steps were all discussed and completed by ourselves:
-• Reuse the assignment2 environment
-• Revisited the related video lecture and the requirements of assignment3
-• Code cupid.c, vmx.c files
-• Run the test_assignment3.c in the nested VM and get the result
-• Finish the report
+• Reuse the assignment2 environment  
+• Revisited the related video lecture and the requirements of assignment3  
+• Code cupid.c, vmx.c files  
+• Run the test_assignment3.c in the nested VM and get the result  
+• Discuss the questions and finish the report  
 
 ### 2. Describe in detail the steps you used to complete the assignment. Consider your reader to be someone skilled in software development but otherwise unfamiliar with the assignment. Good answers to this question will be recipes that someone can follow to reproduce your development steps.
 ### Answer:
