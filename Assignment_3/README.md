@@ -37,7 +37,9 @@ We met and did this research together. The following steps were all discussed an
 Reuse the assignment2 environment: https://github.com/Qinwang1993/CMPE-283/tree/master/Assignment_2
 #### Build
 1.Modify cpuid.c and vmx.c files
+![image](https://github.com/Qinwang1993/CMPE-283/blob/master/Assignment_3/Modify%20the%20code%20at%20the%20end%20of%20the%20cpuid.c%20file%20.png)
 2.Compile using: make -j 4 modules && make -j 4 && sudo make modules_install && sudo make install
+
 3.reboot
 
 #### Test
