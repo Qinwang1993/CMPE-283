@@ -1,55 +1,31 @@
-# CMPE 283 Assignment 3  
+# CMPE 283 Assignment 4  
 Team Member: Qin Wang - 013986752    
              Chen Zhang - 014536496  
 
 ## Assignment 3:  
-This assignment focuses on modifying the CPUID emulation code in KVM to report back additional information when special CPUID leaf nodes are requested.
-
-• For CPUID leaf node %eax=0x4FFFFFFE:  
-• Return the number of exits for the exit number provided (on input) in %ecx  
-• This value should be returned in %eax  
-
-For leaf nodes 0x4FFFFFFE, if %ecx (on input) contains a value not defined by the SDM, return 0 in all %eax, %ebx, %ecx registers and return 0xFFFFFFFF in %edx. For exit types not enabled in KVM, return 0s in all four registers. At a high level, we will need to perform the following:
-
-• Start with our assignment 2 environment  
-• Modify the kernel code with the assignment functionality:   
-• Create a user-mode program that performs various CPUID instructions required to test the assignment  
-• Verify proper output  
+This assignment is to illustrate the difference in performance when using nested paging versus shadow paging, and to illustrate the different exit frequencies and types.  
 
 ## Question: 
 ### 1. For each member in your team, provide 1 paragraph detailing what parts of the lab that member implemented / researched. 
 ### Answer:
-We met and did this research together. The following steps were all discussed and completed by ourselves:  
-• Reuse the assignment2 environment  
-• Revisited the related video lecture and the requirements of assignment3  
-• Code cupid.c, vmx.c files  
-• Run the test_assignment3.c in the nested VM and get the result  
-• Discuss the questions and finish the report  
-
-### 2. Describe in detail the steps you used to complete the assignment. Consider your reader to be someone skilled in software development but otherwise unfamiliar with the assignment. Good answers to this question will be recipes that someone can follow to reproduce your development steps.
-### Answer:
-#### Initial Setup
-Reuse the assignment2 environment: https://github.com/Qinwang1993/CMPE-283/tree/master/Assignment_2
-#### Build
-1.Modify cpuid.c and vmx.c files
-![image](https://github.com/Qinwang1993/CMPE-283/blob/master/Assignment_3/Modify%20the%20code%20at%20the%20end%20of%20the%20cpuid.c%20file%20.png)
-2.Compile using: make -j 4 modules && make -j 4 && sudo make modules_install && sudo make install
-
-3.reboot
-
-#### Test
-Start the nested VM and verify CPUID exit conditions using the test_assignment3.c file.
-1. First run: result detail at : https://github.com/Qinwang1993/CMPE-283/blob/master/Assignment_3/first_run.txt
-![image](https://github.com/Qinwang1993/CMPE-283/blob/master/Assignment_3/First_run.png)
-
-2. Second run: result detail at : https://github.com/Qinwang1993/CMPE-283/blob/master/Assignment_3/second_run.txt
-![image](https://github.com/Qinwang1993/CMPE-283/blob/master/Assignment_3/Second_run.png)
-
-### 3. Comment on the frequency of exits – does the number of exits increase at a stable rate? Or are there more exits performed during certain VM operations? Approximately how many exits does a full VM boot entail?
-### Answer:
-From the Result of first run and second run we can see that the number of exits is not increase at a stale rate. Operations like External Interrrupt, I/O instruction etc will cause more exits. About 1,500,000.
-### 4. Of the exit types defined in the SDM, which are the most frequent? Least?
-### Answer:
-External Interrupt, cpuid, I/O instrcution, etc are the most frequent exit types. And MOV DR, INVD, etc are the least frequent exit types.
+We met and did this research together. The following steps were all discussed and completed by ourselves:
+1. Test nested paging
+  Boost nested VM
+  Run test_assignment3.c in nested VM
+  Paste result in assignment4_nested.txt
+  Shut down nested VM
+  ![image](https://github.com/Qinwang1993/CMPE-283/blob/master/Assignment_3/Modify%20the%20code%20at%20the%20end%20of%20the%20cpuid.c%20file%20.png)
+2. Test shadow paging
+  Remove kvm-intel module from your running kernel
+  sudo rmmod kvm-intel
+  Reload kvm-intel module with the parameter ept=0
+  Sudo insmod /lib/modules/5.12.0+/kernel/arch/x86/kvm/kvm-intel.ko ept=0
+3. Boost the same nested VM
+4. Run test_assignment3.c in nested VM
+5. Paste result in assignment4_shadow.txt
+6. Shut down nested VM
 
 
+### 2. Include a sample of your print of exit count output from dmesg from “with ept” and “without ept”.
+### 3. What did you learn from the count of exits? Was the count what you expected? If not, why not?
+### 4. What changed between the two runs (ept vs no-ept)?
